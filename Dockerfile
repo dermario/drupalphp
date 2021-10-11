@@ -37,6 +37,11 @@ RUN set -eux; \
 	pecl install redis-5.1.1; \
 	docker-php-ext-enable redis; \
 	\
+	pecl install apcu; \
+        docker-php-ext-enable apcu; \
+	\
+	pecl clear-cache \
+	\
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
 	apt-mark auto '.*' > /dev/null; \
 	apt-mark manual $savedAptMark; \
