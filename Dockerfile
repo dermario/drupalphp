@@ -109,5 +109,5 @@ RUN curl -fsSL -o /usr/local/bin/drush "https://github.com/drush-ops/drush-launc
 ENV PATH="/var/www/html/web/vendor/bin:${PATH}"
 
 # Install Composer
-COPY --from=composer:2.1.5 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.3.10 /usr/bin/composer /usr/bin/composer
 RUN composer --version
